@@ -12,6 +12,20 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+    private fun logCrash(t: Throwable) {
+        try {
+            val f = java.io.File(getExternalFilesDir(null), "crash_log.txt")
+            f.appendText("=== " + java.util.Date().toString() + " ===\n" + android.util.Log.getStackTraceString(t) + "\n\n")
+        } catch (e: Exception) {}
+    }
+
+    init {
+        Thread.setDefaultUncaughtExceptionHandler { _, t ->
+            logCrash(t)
+            android.os.Process.killProcess(android.os.Process.myPid())
+        }
+    }
+
 
     private lateinit var serverInput: EditText
 
