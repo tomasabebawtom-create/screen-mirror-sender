@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         serverInput = findViewById(R.id.serverInput)
         // Default only as a hint - replace with your Termux device's LAN IP.
-        serverInput.setText("ws://10.121.143.226:8080")
+        serverInput.setText("wss://soviet-durham-representative-effect.trycloudflare.com")
 
         findViewById<Button>(R.id.connectButton).setOnClickListener {
             val mpm = getSystemService(MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
