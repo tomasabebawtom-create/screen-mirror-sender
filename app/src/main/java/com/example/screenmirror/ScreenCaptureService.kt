@@ -94,8 +94,8 @@ class ScreenCaptureService : Service(), SignalingClient.Listener {
         PeerConnectionFactory.initialize(
             PeerConnectionFactory.InitializationOptions.builder(this).createInitializationOptions()
         )
-        val encoderFactory = DefaultVideoEncoderFactory(eglBase.eglBaseContext, true, true)
-        val decoderFactory = DefaultVideoDecoderFactory(eglBase.eglBaseContext)
+        val encoderFactory = SoftwareVideoEncoderFactory()
+        val decoderFactory = SoftwareVideoDecoderFactory()
         factory = PeerConnectionFactory.builder()
             .setVideoEncoderFactory(encoderFactory)
             .setVideoDecoderFactory(decoderFactory)
