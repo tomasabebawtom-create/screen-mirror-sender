@@ -36,8 +36,8 @@ dependencies {
 
     // WebRTC for Android. The old org.webrtc:google-webrtc artifact is no longer
     // published to Maven Central - use a maintained prebuilt AAR instead, e.g.:
-    //   implementation 'io.github.webrtc-sdk:android:125.6422.07.1'
+    //   implementation 'io.github.webrtc-sdk:android:125.6422.07'
     // Check https://github.com/webrtc-sdk/android for the current version tag
     // before building, since these version numbers move frequently.
-    implementation 'io.github.webrtc-sdk:android:125.6422.07.1'
+    implementation 'io.github.webrtc-sdk:android:125.6422.07'
 }
